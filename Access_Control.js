@@ -1,4 +1,4 @@
-let role = "developer";
+let role = "intern";
 
 switch (role) 
 {

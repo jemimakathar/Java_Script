@@ -1,4 +1,4 @@
-let amount = 1500;
+let amount = 150;
 let accountBalance = 2000;
 let isAccountVerified = true;
 

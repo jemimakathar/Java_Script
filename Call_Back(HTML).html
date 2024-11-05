@@ -1,33 +1,38 @@
-
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Form Submission with Callback</title>
-    </head>
-    <body>
-        <h1>Enter Your Name</h1>
-        <form id="userform">
-            <label for="name">Name:</label>
-            <input type="text" id="name" required>
-            <button type="submit">Submit</button>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission with Callback</title>
+</head>
+<body>
+    <h2>Enter Your Name</h2>
+    <form id="userForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="greetingMessage"></p>
 
-        </form>
-        <p id="greetingmsg"></p>
+    <script>
+        // Callback function that displays the greeting message
+        function displayGreeting(name) {
+            const greetingMessage = document.getElementById("greetingMessage");
+            greetingMessage.textContent = `Hello, ${name}! Welcome to our site.`;
+        }
 
-        <script>
+        // Function to handle form submission
+        function handleFormSubmit(event, callback) {
+            event.preventDefault(); // Prevents page reload
+            const name = document.getElementById("name").value; // Get the entered name
+            callback(name); // Calls the callback with the name entered by the user
+        }
 
-
-            function displayGreeting(name)
-            {
-                const value =document.getElementById("greetingmsg");
-                value.textContent=`Hello, ${name}!`
-            }
-
-            func
-
-
-
-
-        </script>
-    </body>
+        // Adding event listener to the form
+        const form = document.getElementById("userForm");
+        form.addEventListener("submit", function(event) {
+            handleFormSubmit(event, displayGreeting); // Pass displayGreeting as a callback
+        });
+    </script>
+</body>
 </html>

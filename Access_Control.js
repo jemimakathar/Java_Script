@@ -1,16 +1,19 @@
-let role = "editor";
+let role = "developer";
 
 switch (role) 
 {
     case "admin":
         console.log("Access granted to all sections. Welcome, Admin!");
         break;
-    case "editor":
-        console.log("Access granted to editing and viewing sections.");
+    case "developer":
+        console.log("Access granted to development sections.");
         break;
-    case "viewer":
-        console.log("Access granted to viewing sections only.");
+    case "tester":
+        console.log("Access granted to testing sections only.");
         break;
     default:
         console.log("Access denied. Unknown role.");
 }
+
+
+

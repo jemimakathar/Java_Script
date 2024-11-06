@@ -10,29 +10,31 @@
     <form id="userForm">
         <label for="name">Name:</label>
         <input type="text" id="name" required>
-        <button type="submit">Submit</button>
+        <button type="submi">Submit</button>
     </form>
-    <p id="greetingMessage"></p>
+    <p id="greetingMessage">hello</p>
 
     <script>
-        // Callback function that displays the greeting message
+      
         function displayGreeting(name) {
             const greetingMessage = document.getElementById("greetingMessage");
             greetingMessage.textContent = `Hello, ${name}! Welcome to our site.`;
         }
 
-        // Function to handle form submission
+
         function handleFormSubmit(event, callback) {
             event.preventDefault(); // Prevents page reload
-            const name = document.getElementById("name").value; // Get the entered name
-            callback(name); // Calls the callback with the name entered by the user
+            const value = document.getElementById("name").value; // Get the entered name
+            callback(value); // Calls the callback with the name entered by the user
         }
 
-        // Adding event listener to the form
-        const form = document.getElementById("userForm");
-        form.addEventListener("submit", function(event) {
-            handleFormSubmit(event, displayGreeting); // Pass displayGreeting as a callback
+      
+        const forms = document.getElementById("userForm");
+        forms.addEventListener("submit", function(e) { //e is a parameter pass to handleFormSubmit
+            handleFormSubmit(e, displayGreeting); // Pass displayGreeting as a callback
         });
+
     </script>
+    
 </body>
 </html>
